@@ -40,7 +40,6 @@ public class NumberDivider {
      *	@return an array containing the first num integers >= start
      *		that are number dividers
      **/
-    //changed x to num?
     public static int [] firstXNumberDividers(int start, int num)
     {
         int [] a = new int [num];
@@ -70,3 +69,10 @@ public class NumberDivider {
     }
 
 }
+/*
+true
+true
+false
+false
+[128, 132, 135, 144]
+ */

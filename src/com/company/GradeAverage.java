@@ -37,10 +37,13 @@ public class GradeAverage {
     private boolean showsImprovement()
     {
         //TODO add code here
-        boolean improve = true;
-        for(int i = scores.length - 1; i > 0; i--){
-            if (scores[i] < scores[i-1]){
-                improve = false;
+        boolean improve = false;
+        for(int i = 0; i < scores.length - 1; i++){
+            if (scores[i] <= scores[i+1]){
+                improve = true;
+            }
+            else{
+                return false;
             }
         }
         return improve;
@@ -53,7 +56,6 @@ public class GradeAverage {
     public double finalGrade()
     {
         //TODO add code here
-        double grade = 0;
         if (this.showsImprovement()){
            return this.mean(scores.length/2, scores.length - 1);
         }
@@ -68,14 +70,29 @@ public class GradeAverage {
         System.out.println(sr1.mean(3,4));
         System.out.println(sr1.showsImprovement());
         System.out.println(sr1.finalGrade());
+
         GradeAverage sr2 = new GradeAverage(s2);
         System.out.println(sr2.mean(1,3));
         System.out.println(sr2.showsImprovement());
         System.out.println(sr2.finalGrade());
+
         GradeAverage sr3 = new GradeAverage(s3);
         System.out.println(sr3.mean(0,3));
         System.out.println(sr3.showsImprovement());
         System.out.println(sr3.finalGrade());
     }
 
+
 }
+
+/*
+66.5
+false
+50.6
+51.0
+true
+61.0
+51.25
+true
+67.5
+ */
